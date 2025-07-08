@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./SportEcommerceServices
+    container_name: sportecommerce_backend
+    image: rain494/my_backend_image
+    ports:
+      - "5000:5000"
+    env_file: 
+      - ./SportEcommerceServices/.env
+    restart: always
+
+  frontend:
+    build:
+      context: ./WebSport
+    container_name: sportecommerce_frontend
+    image: rain494/my_frontend_image
+    ports:
+      - "80:80"  
+    restart: always
+  
+
